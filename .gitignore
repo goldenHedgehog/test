@@ -10,3 +10,4 @@
 .idea/inspectionProfiles/
 node_modules/
 package-lock.json
+/.idea/deployment.xml
