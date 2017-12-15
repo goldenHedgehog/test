@@ -6,5 +6,7 @@
 .idea/test.iml
 .idea/workspace.xml
 .idea/vcs.xml
-/nbproject/
-/nbproject/private/
+.idea/TZ20171214_1.iml
+.idea/inspectionProfiles/
+node_modules/
+package-lock.json
