@@ -1,16 +1,15 @@
 define(['react'], function(React) {
 
-    var Label = React.createClass({
-        getInitialState: function() {
-            return{
-                timer   :this.props.timer || 3000,
-                color   :this.props.color || "",
-                style   :this.props.style || "basic",
-                position:this.props.position || "left"
+    class Label extends React.Component {
 
-            }
-        },
-        componentDidMount:function(){
+        static propTypes = {
+            timer   :this.props.timer || 3000,
+            color   :this.props.color || "",
+            style   :this.props.style || "basic",
+            position:this.props.position || "left"
+        };
+
+        componentDidMount(){
             var self=this;
             if(this.state.timer){
                 setTimeout(() => {
@@ -19,13 +18,15 @@ define(['react'], function(React) {
                     }
                 }, self.state.timer);
             }
-        },
-        render:function(){
+        }
+
+        render(){
             return(
                 <div ref="label" className= {"ui "+this.state.position+" pointing "+this.state.color+" "+this.state.style+ " label"}>
                     {this.props.label || "Выполнено"}
                 </div>
-            )}
-    });
+            );
+        }
+    }
     return Label;
-})
+});
